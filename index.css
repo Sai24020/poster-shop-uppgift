@@ -8,7 +8,7 @@ body {
       'nav main main main'
       'nav aside aside aside'
       'footer footer footer footer';
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 200px 1fr 3fr auto;
     gap: 10px;
     height: 100vh;
