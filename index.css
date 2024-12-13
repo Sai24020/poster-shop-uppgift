@@ -1,114 +1,124 @@
 body {
-    top: 0px;
-    left: 0px;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-areas:
+    'nav nav header header'
+    'aside main main main'
+    'aside main main main'
+    'footer footer footer footer';
+  grid-template-rows: 1fr 1fr auto auto;
+  grid-template-columns: auto auto 3fr auto;
+  gap: 10px;
+  height: 100vh;
+  grid-auto-flow: column;*/
+}
+
+.header {
+  grid-area: header;
+  background-color: #f4b400;
+  text-align: left;
+  padding: 10px;
+  justify-content: start;      
+  list-style: none;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #34a853;
+  grid-auto-flow: column;
+  /*padding: 10px;*/
+  text-align: start;
+  /*height: 400px;*/
+  width: 250px;
+   /*grid-gap: 1%;*/
+}
+ .wrapper {
+    width: 90%;
     display: grid;
-    grid-auto-flow: column;
+    grid-gap: 2%;
+    grid-template-columns: repeat(6, 10%);
+    border:1px solid #000;
+    margin-bottom: 2em;
+  }
+
+.with-height {
+  height: 400px;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: purple;
+  padding: 10px;
+  text-align: center;
+  height: 400px;
+}
+.footer {
+  grid-area: footer;
+  background-color: tomato;
+  padding: 10px;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  background-color: blue;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body {
     grid-template-areas:
-      'header header header header'
-      'nav main main main'
-      'nav aside aside aside'
-      'footer footer footer footer';
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 200px 1fr 3fr auto;
-    gap: 10px;
-    height: 100vh;
-    grid-auto-flow: column;
+      'nav'
+      'header'
+      'main'
+      'aside'
+      'footer';
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
   }
+}
+
+nav {
+    background-image: url(poster.png);
+    background-color: var(--clr-neutral-900);
+    padding: 0;
+   justify-content: start;
+    /*margin-block: 1rem;*/
+    /*margin-bottom: 10px;*/
+    margin-top: 0;
+    margin-left: 0;
+    ul {
+      display: flex;
+      justify-content: start;      
+      list-style: none;
+      gap: 10px;
   
-  .header {
-    grid-area: header;
-    background-color: #f4b400;
-    text-align: left;
-    padding: 10px;
-    justify-content: start;      
-    list-style: none;
-  }
+      li {
+        font-size: 12px;
+        }
   
-  .nav {
-    grid-area: nav;
-    background-color: #34a853;
-    grid-auto-flow: column;
-    /*padding: 10px;*/
-    text-align: start;
-    height: 400px;
-    width: 200px;
-     /*grid-gap: 1%;*/
-  }
-   .wrapper {
-      width: 90%;
-      display: grid;
-      grid-gap: 2%;
-      grid-template-columns: repeat(6, 10%);
-      border:1px solid #000;
-      margin-bottom: 2em;
-    }
-  
-  .with-height {
-    height: 400px;
-  }
-  
-  .aside {
-    grid-area: aside;
-    background-color: purple;
-    padding: 10px;
-    text-align: center;
-  }
-  .footer {
-    grid-area: footer;
-    background-color: tomato;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .main {
-    grid-area: main;
-    background-color: blue;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  @media (max-width: 600px) {
-    body {
-      grid-template-areas:
-        'header'
-        'nav'
-        'main'
-        'aside'
-        'footer';
-      grid-template-rows: auto;
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  nav {
-      background-image: url(poster.png);
-      background-color: var(--clr-neutral-900);
-      padding: 0;
-     justify-content: start;
-      /*margin-block: 1rem;*/
-      /*margin-bottom: 10px;*/
-      margin-top: 0;
-      margin-left: 0;
-      ul {
-        display: grid;
-        justify-content: start;      
-        list-style: none;
-        gap: 10px;
-    
-        li {
-          font-size: 12px;
-          }
-    
-          a {
-            padding-right: 0;
-            padding: 0px;
-            color: var(--clr-neutral-300);
-       
-            text-decoration: none;
-            &:hover,
-            &:focus-visible {
-              text-decoration: underline;
-            }
+        a {
+          padding-right: 0;
+          padding: 0px;
+          color: var(--clr-neutral-300);
+     
+          text-decoration: none;
+          &:hover,
+          &:focus-visible {
+            text-decoration: underline;
           }
         }
       }
+    }
+
+/*img {
+          position: absolute;
+          width: 32px;
+          height: 32px;
+          top: 0;
+          left: 0;
+          pointer-events: initial;
+}      */ 
