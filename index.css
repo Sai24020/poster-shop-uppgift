@@ -82,7 +82,7 @@ body {
 }
 
 nav {
-    background-image: url(poster.png);
+    /*background-image: url(poster.png);*/
     background-color: var(--clr-neutral-900);
     padding: 0;
    justify-content: start;
@@ -91,7 +91,7 @@ nav {
     margin-top: 0;
     margin-left: 0;
     ul {
-      display: flex;
+      display: grid;
       justify-content: start;      
       list-style: none;
       gap: 10px;
